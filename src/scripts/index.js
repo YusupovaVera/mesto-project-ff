@@ -1,10 +1,7 @@
 import "../pages/index.css";
-import { initialCards } from "../scripts/cards.js";
-import { createCardElement } from "../scripts/cards.js";
-import { deleteCard } from "../scripts/cards.js";
-import { likeCard } from "../scripts/cards.js";
-import { openModal } from "../scripts/modal.js";
-import { closeModal } from "../scripts/modal.js";
+import { initialCards } from "../scripts/card.js";
+import { createCardElement, deleteCard, likeCard } from "../scripts/cards.js";
+import { openModal, closeModal } from "../scripts/modal.js";
 
 const cardsContainer = document.querySelector(".places__list");
 
@@ -21,7 +18,8 @@ const popupCaption = popupTypeImage.querySelector(".popup__caption");
 
 const formElementEdit = document.forms["edit-profile"];
 const nameInput = formElementEdit.elements.name;
-const jobInput = formElementEdit.elements.description;``
+const jobInput = formElementEdit.elements.description;
+``;
 
 const formElementNewCard = document.forms["new-place"];
 const placeNameInput = formElementNewCard.elements["place-name"];

@@ -4,7 +4,7 @@
   "description": "[Ccылка на репозиторий](https://github.com/YusupovaVera/mesto-project-ff.git)",
   "main": "./src/index.html",
   "scripts": {
-    "build": "webpack --mode development --config webpack/config.js",
+    "build": "webpack --mode development --config webpack.config.js",
     "dev": "webpack serve"
   },
   "author": "",
