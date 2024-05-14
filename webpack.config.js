@@ -8,13 +8,13 @@ module.exports = {
     main: "./src/scripts/index.js",
   },
   output: {
-    path: path.resolve("./dist"),
+    path: path.resolve(__dirname, "dist"),
     filename: "main.js",
     publicPath: "",
   },
   mode: "development",
   devServer: {
-    static: path.resolve("./dist"),
+    static: path.resolve(__dirname, "./dist"),
     open: true,
     compress: true,
     port: 8080,
@@ -47,7 +47,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: "./src/index.html",
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
