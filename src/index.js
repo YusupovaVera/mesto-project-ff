@@ -2,7 +2,13 @@ import "./pages/index.css";
 import { createCard, deleteCard, likeCard } from "./files/card.js";
 import { openModal, closeModal } from "./files/modal.js";
 
-import { getInitialData, updateUserData, createNewCard, updateAvatar, getInitialCards } from "./files/api.js";
+import {
+  getInitialData,
+  updateUserData,
+  createNewCard,
+  updateAvatar,
+  getInitialCards,
+} from "./files/api.js";
 import { enableValidation, clearValidation } from "./files/validation.js";
 
 import { renderLoading } from "./files/utils.js";
@@ -161,14 +167,3 @@ getInitialData()
   .catch((err) => {
     console.error(err);
   });
-
-// включение валидации вызовом enableValidation
-// все настройки передаются при вызове
-enableValidation({
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
-});

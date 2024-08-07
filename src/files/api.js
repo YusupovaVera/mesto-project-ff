@@ -55,10 +55,7 @@ const deleteCardFromServer = (cardId) => {
     headers: config.headers,
   })
   .then((res) => {
-    if (!res.ok) {
-      // если ошибка, отклоняем промис
-      return Promise.reject(`Ошибка: ${res.status}`);
-    }
+    return getFetchResult(res);
   });
 };
 
@@ -68,7 +65,8 @@ const addRemoveLike = (cardId, addLike) => {
   return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
     method: `${method}`,
     headers: config.headers,
-  }).then((res) => {
+  })
+  .then((res) => {
     return getFetchResult(res);
   });
 };
