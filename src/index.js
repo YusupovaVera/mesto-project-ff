@@ -167,3 +167,5 @@ getInitialData()
   .catch((err) => {
     console.error(err);
   });
+
+enableValidation(validationConfig);

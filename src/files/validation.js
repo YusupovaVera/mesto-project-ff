@@ -65,8 +65,7 @@ const toggleButtonState = (inputList, buttonElement, validationConfig) => {
     // сделай кнопку неактивной
     disableSubmitButton(buttonElement, validationConfig);
   } else {
-    buttonElement.removeAttribute("disabled");
-    buttonElement.classList.remove(validationConfig.inactiveButtonClass);
+    enableButton(buttonElement, validationConfig);
   }
 };
 
@@ -74,6 +73,12 @@ const toggleButtonState = (inputList, buttonElement, validationConfig) => {
 const disableSubmitButton = (button, config) => {
   button.setAttribute("disabled", "true");
   button.classList.add(config.inactiveButtonClass);
+};
+
+//Функция которая делает кнопку активной, удаляя атрибут disabled и класс inactiveButtonClass.
+const enableButton = (button, config) => {
+  button.removeAttribute("disabled");
+  button.classList.remove(config.inactiveButtonClass);
 };
 
 //Функция setEventListe добавит обработчики сразу всем полям формы
@@ -120,11 +125,11 @@ function clearValidation(profileForm, validationConfig) {
   const buttonElement = profileForm.querySelector(
     validationConfig.submitButtonSelector
   );
+
   inputList.forEach((inputElement) => {
     hidenInputError(profileForm, inputElement, validationConfig);
   });
-  buttonElement.removeAttribute("disabled");
-  buttonElement.classList.remove(validationConfig.inactiveButtonClass);
+  enableButton(buttonElement, validationConfig);
 }
 
 export { enableValidation, clearValidation };
